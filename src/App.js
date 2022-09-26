@@ -1,11 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './layout/Header';
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./layout/Header";
+import { RecoilRoot } from "recoil";
 
 function App() {
   return (
     <>
-    <Header/>
+      <RecoilRoot>
+        <Header />
+      </RecoilRoot>
     </>
   );
 }
