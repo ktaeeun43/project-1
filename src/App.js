@@ -1,5 +1,5 @@
-import logo from "./logo.svg";
-import "./App.css";
+
+import "../src/App.css";
 import Header from "./layout/Header";
 import { RecoilRoot } from "recoil";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -8,6 +8,7 @@ import Life from "./pages/life/Life";
 import Market from "./pages/market/Market";
 import News from "./pages/news/News";
 import Home from "./pages/Home";
+
 
 function App() {
   return (

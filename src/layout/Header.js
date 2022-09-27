@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Nav from "../components/Nav"
 
 const Wrapper = styled.div`
 background-color: #c891ed;
@@ -18,7 +19,7 @@ function Header() {
     <>
     <Wrapper>
     <NavWrapper>
-        test
+      <Nav />
     </NavWrapper>
     </Wrapper>
     </>
