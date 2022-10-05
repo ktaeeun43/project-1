@@ -1,87 +1,60 @@
-import "../App.css";
 import React from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import styled from "styled-components";
-import bottomNavList from '../atom/bottomNavList';
-import navList from '../atom/navList';
+import navList from '../atom/navList'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
-
-const Wrapper = styled.div`
-width: 100%;
-height: 100%;
+const Wrapper = styled.nav`
+    width: 100%;
+    height: 60px;
+    background-color: #CD5C5C;
+    position: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const NavWrapper = styled.div`
-background-color: #CD5C5C;
-  display: flex;
-  height: 55px;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const NavWrapper2 = styled.div`
-  position: fixed;
-  top: 55px;
-  width: 100%;
-  display: flex;
-  background-color: white;
-  height: 55px;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
 
 const LeftSide = styled.div`
-display: flex;
-align-items: center;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 20%;
 `;
 
 const LeftSideLink = styled.div`
-  position: relative;
-  left: 500px;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  margin-left : 20px;
-  text-decoration: none;
-  color: black;
-  font-family: DoHyeon-Regular;
+position: relative;
+display: flex;
+align-items: center;
+padding-left: 20px;
+padding-right: 20px;
+text-decoration: none;
+font-family: "Do Hyeon";
+color: white;
+font-size: 100%;
+
 `;
 
-const Logo = styled.div`
-width: 20px;
-height: 20px;
-`;
 
 function Nav() {
-
   return (
     <>
     <Wrapper>
         <NavWrapper>
             <LeftSide>
-                {navList.map(({ title, path}) => {
+                {navList.map(({ title, path }) => {
                     return (
-                        <Link style={{ textDecoration: "none" }} to={`/page/${path}`}>
+                        <Link style={{ textDecoration: "none"}} to={`/${path}`}>
                             <LeftSideLink key={path}>{title}</LeftSideLink>
                         </Link>
-                    )
+                        )
                 })}
             </LeftSide>
         </NavWrapper>
-        <NavWrapper2>
-            <LeftSide>
-                <Link to={`/`}>
-                    <Logo src="2798804.svg" />
-                </Link>
-                {bottomNavList.map(({ title, path}) => {
-                    return (
-                        <Link style={{ textDecoration: "none" }} to={`/page/${path}`}>
-                            <LeftSideLink key={path}>{title}</LeftSideLink>
-                        </Link>
-                    )
-                })}
-            </LeftSide>
-        </NavWrapper2>
     </Wrapper>
     </>
   )
